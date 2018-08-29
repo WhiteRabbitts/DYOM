@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Load Page to Push Attractions to FireBase</h1>
+
+    <a href="https://console.firebase.google.com/project/orlandotravelproject/database/orlandotravelproject/data">Click Here to see the FireBase<a>
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <!-- Linking to jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    
+    
+<script>
+    //Inial function to load on document ready
+$(document).ready(function(){
+
+/* To Use this page....
+        1. Swap out this file with existing script on the main HTML page using "pushRides.js" in the custom script tag
+        2. Update the list of attractions in the JSON Object below
+        3. A "csv to JSON" formatter can be used to quickly generate the JSON from Excel (https://www.csvjson.com/csv2json)
+        4. Once this page loads, it will update firebase (https://console.firebase.google.com/project/orlandotravelproject/database/orlandotravelproject/data)
+        5. Aftwerwards, change HTML back to "logic.js"
+*/
+
+//#region initialize firebase, global config, and global variables
+
+  //Initialize Firebase For Users Data Collection
+  var config = {
+        apiKey: "AIzaSyCRmQIgP5QRngV4cj6Z0bDnabYv-5_1vF8",
+        authDomain: "orlandotravelproject.firebaseapp.com",
+        databaseURL: "https://orlandotravelproject.firebaseio.com",
+        projectId: "orlandotravelproject",
+        storageBucket: "orlandotravelproject.appspot.com",
+        messagingSenderId: "182828242079"
+    };
+  firebase.initializeApp(config);
+ 
+  // Define database variables
+  var db = firebase.database();
+  // Database reference for guests
+  var guestsRef = db.ref("/guests");
+  var ridesRef = db.ref("/attractions")
+
+//#endregion
+
+// Create the list of attractions as a JSON Object
+var adultsList = //Adults Only Attraction List
+
+{
+"Space Mountain" : {
+"description" : "Board a rocket and go on an amazing roller coaster ride through the Milky way. This attraction is mostly in the dark and very loud with sudden stops and drops. This attraction does not go upside down.",
+"attractionName" : "Space Mountain",
+"rideVideo" : "https://www.youtube.com/embed/xJEygqUKcvs",
+"heightRequirement" : "none",
+},
+"Ride 2" : {
+"description" : "Board a rocket and go on an amazing roller coaster ride through the Milky way. This attraction is mostly in the dark and very loud with sudden stops and drops. This attraction does not go upside down.",
+"attractionName" : "Space Mountain",
+"rideVideo" : "https://www.youtube.com/embed/xJEygqUKcvs",
+"heightRequirement" : "none",
+},
+"Space Mountain" : {
+"description" : "Board a rocket and go on an amazing roller coaster ride through the Milky way. This attraction is mostly in the dark and very loud with sudden stops and drops. This attraction does not go upside down.",
+"attractionName" : "Space Mountain",
+"rideVideo" : "https://www.youtube.com/embed/xJEygqUKcvs",
+"heightRequirement" : "none",
+},
+"Space Mountain" : {
+"description" : "Board a rocket and go on an amazing roller coaster ride through the Milky way. This attraction is mostly in the dark and very loud with sudden stops and drops. This attraction does not go upside down.",
+"attractionName" : "Space Mountain",
+"rideVideo" : "https://www.youtube.com/embed/xJEygqUKcvs",
+"heightRequirement" : "none",
+},
+"Space Mountain" : {
+"description" : "Board a rocket and go on an amazing roller coaster ride through the Milky way. This attraction is mostly in the dark and very loud with sudden stops and drops. This attraction does not go upside down.",
+"attractionName" : "Space Mountain",
+"rideVideo" : "https://www.youtube.com/embed/xJEygqUKcvs",
+"heightRequirement" : "none",
+}
+}
+
+
+var kidsList = //Adults with 3-9 Kids Attraction List
+{
+"Space Mountain" : {
+"description" : "Board a rocket and go on an amazing roller coaster ride through the Milky way. This attraction is mostly in the dark and very loud with sudden stops and drops. This attraction does not go upside down.",
+"attractionName" : "Space Mountain",
+"rideVideo" : "https://www.youtube.com/embed/xJEygqUKcvs",
+"heightRequirement" : "none",
+},
+"Space Mountain" : {
+"description" : "Board a rocket and go on an amazing roller coaster ride through the Milky way. This attraction is mostly in the dark and very loud with sudden stops and drops. This attraction does not go upside down.",
+"attractionName" : "Space Mountain",
+"rideVideo" : "https://www.youtube.com/embed/xJEygqUKcvs",
+"heightRequirement" : "none",
+},
+"Space Mountain" : {
+"description" : "Board a rocket and go on an amazing roller coaster ride through the Milky way. This attraction is mostly in the dark and very loud with sudden stops and drops. This attraction does not go upside down.",
+"attractionName" : "Space Mountain",
+"rideVideo" : "https://www.youtube.com/embed/xJEygqUKcvs",
+"heightRequirement" : "none",
+},
+"Space Mountain" : {
+"description" : "Board a rocket and go on an amazing roller coaster ride through the Milky way. This attraction is mostly in the dark and very loud with sudden stops and drops. This attraction does not go upside down.",
+"attractionName" : "Space Mountain",
+"rideVideo" : "https://www.youtube.com/embed/xJEygqUKcvs",
+"heightRequirement" : "none",
+},
+"Space Mountain" : {
+"description" : "Board a rocket and go on an amazing roller coaster ride through the Milky way. This attraction is mostly in the dark and very loud with sudden stops and drops. This attraction does not go upside down.",
+"attractionName" : "Space Mountain",
+"rideVideo" : "https://www.youtube.com/embed/xJEygqUKcvs",
+"heightRequirement" : "none",
+}
+}
+
+var babiesList = //Adults with 0-2 aged kids
+{
+"Space Mountain" : {
+"description" : "Board a rocket and go on an amazing roller coaster ride through the Milky way. This attraction is mostly in the dark and very loud with sudden stops and drops. This attraction does not go upside down.",
+"attractionName" : "Space Mountain",
+"rideVideo" : "https://www.youtube.com/embed/xJEygqUKcvs",
+"heightRequirement" : "none",
+},
+"Space Mountain" : {
+"description" : "Board a rocket and go on an amazing roller coaster ride through the Milky way. This attraction is mostly in the dark and very loud with sudden stops and drops. This attraction does not go upside down.",
+"attractionName" : "Space Mountain",
+"rideVideo" : "https://www.youtube.com/embed/xJEygqUKcvs",
+"heightRequirement" : "none",
+},
+"Space Mountain" : {
+"description" : "Board a rocket and go on an amazing roller coaster ride through the Milky way. This attraction is mostly in the dark and very loud with sudden stops and drops. This attraction does not go upside down.",
+"attractionName" : "Space Mountain",
+"rideVideo" : "https://www.youtube.com/embed/xJEygqUKcvs",
+"heightRequirement" : "none",
+},
+"Space Mountain" : {
+"description" : "Board a rocket and go on an amazing roller coaster ride through the Milky way. This attraction is mostly in the dark and very loud with sudden stops and drops. This attraction does not go upside down.",
+"attractionName" : "Space Mountain",
+"rideVideo" : "https://www.youtube.com/embed/xJEygqUKcvs",
+"heightRequirement" : "none",
+},
+"Space Mountain" : {
+"description" : "Board a rocket and go on an amazing roller coaster ride through the Milky way. This attraction is mostly in the dark and very loud with sudden stops and drops. This attraction does not go upside down.",
+"attractionName" : "Space Mountain",
+"rideVideo" : "https://www.youtube.com/embed/xJEygqUKcvs",
+"heightRequirement" : "none",
+}
+}
+
+var kidsAndBabiesList = //Adults with 3-9 kids and 0-2 kids
+{
+"Space Mountain" : {
+"description" : "Board a rocket and go on an amazing roller coaster ride through the Milky way. This attraction is mostly in the dark and very loud with sudden stops and drops. This attraction does not go upside down.",
+"attractionName" : "Space Mountain",
+"rideVideo" : "https://www.youtube.com/embed/xJEygqUKcvs",
+"heightRequirement" : "none",
+},
+"Space Mountain" : {
+"description" : "Board a rocket and go on an amazing roller coaster ride through the Milky way. This attraction is mostly in the dark and very loud with sudden stops and drops. This attraction does not go upside down.",
+"attractionName" : "Space Mountain",
+"rideVideo" : "https://www.youtube.com/embed/xJEygqUKcvs",
+"heightRequirement" : "none",
+},
+"Space Mountain" : {
+"description" : "Board a rocket and go on an amazing roller coaster ride through the Milky way. This attraction is mostly in the dark and very loud with sudden stops and drops. This attraction does not go upside down.",
+"attractionName" : "Space Mountain",
+"rideVideo" : "https://www.youtube.com/embed/xJEygqUKcvs",
+"heightRequirement" : "none",
+},
+"Space Mountain" : {
+"description" : "Board a rocket and go on an amazing roller coaster ride through the Milky way. This attraction is mostly in the dark and very loud with sudden stops and drops. This attraction does not go upside down.",
+"attractionName" : "Space Mountain",
+"rideVideo" : "https://www.youtube.com/embed/xJEygqUKcvs",
+"heightRequirement" : "none",
+},
+"Space Mountain" : {
+"description" : "Board a rocket and go on an amazing roller coaster ride through the Milky way. This attraction is mostly in the dark and very loud with sudden stops and drops. This attraction does not go upside down.",
+"attractionName" : "Space Mountain",
+"rideVideo" : "https://www.youtube.com/embed/xJEygqUKcvs",
+"heightRequirement" : "none",
+}
+}
+
+// Send the variable as a "set" to replace the existing list if present
+ridesRef.set({
+adultsList : adultsList,
+kidsList : kidsList,
+babiesList : babiesList,
+kidsAndBabiesList : kidsAndBabiesList
+});  
+
+});
+    
+    
+    
+    </script>
+
+</body>
+</html>

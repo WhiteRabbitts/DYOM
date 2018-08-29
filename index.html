@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Design Your Own Magic</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Orbitron:900" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Kirang+Haerang" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+  <!-- Top NavBar -->
+  <div class="topofpage">
+    <div class="row">
+      <div class="col s12 m6 l3">
+        <h6>
+          <a href="index.html">DYOM</a>
+        </h6>
+      </div>
+      <div class="col s12 m6 l3">
+        <h4>
+          <a href="#sunny" class>Weather</a>
+        </h4>
+      </div>
+      <div class="col s12 m6 l3">
+        <h4>
+          <a href="#orlando" class>Map</a>
+        </h4>
+      </div>
+      <div class="col s12 m6 l3">
+        <h4>
+          <a href="#lands">Lands</a>
+        </h4>
+      </div>
+    </div>
+    <br>
+  </div>
+
+
+  <!-- Parallax Image-->
+  <div class="parallax-container">
+    <div class="parallax">
+      <img src="http://static1.purebreak.com.br/articles/2/51/2/@/2813-a-walt-disney-word-tem-mais-de-62-mil-opengraph_1200-1.jpg">
+    </div>
+  </div>
+
+  <!-- Design Your Own Magic / User Input Section -->
+  <div class="section white" id="inputContainer">
+    <div class="row container">
+      <h1 class="header">Design Your Own Magic</h1>
+      <p class="grey-text text-darken-3 lighten-3">You are about to embark on a great adventure with your traveling family! The Magic Kingdom Park is the most popular
+        theme park in the entire world, with over 50 attractions to see and do. To get you started on your day at the Magic
+        Kingdom Park, fill out the form below to get your Top 5 attractions you do not want to miss!
+      </p>
+      <nav>
+        <div class="row">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s2">
+                <input placeholder="First Name?" id="nameInput" type="text" class="validate">
+              </div>
+              <div class="input-field col s2">
+                <label></label>
+                <select class="browser-default" id="adultsInput">
+                  <option value="" disabled selected>Adults in Group Ages 10+</option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </div>
+              <div class="input-field col s2">
+                <label></label>
+                <select class="browser-default" id="childrenInput">
+                  <option value="" disabled selected>Kids in Group Ages 3-9</option>
+                  <option value="">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </div>
+              <div class="input-field col s2">
+                <label></label>
+                <select class="browser-default" id="infantsInput">
+                  <option value="0" disabled selected>Kids in Group Ages 0-2</option>
+                  <option value="">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </div>
+              <div class="input-field col s2">
+                <button class="btn waves-effect waves-light" type="submit" name="action" id="submit">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+   <!-- Results Table, Hiden Until Form Submitted  -->
+   <div class="section white" id="resultsContainer">
+      <div class="row container">
+        <h1 class="header">Custom Recommendations</h1>
+        <a class="btn-floating btn-large waves-effect waves-light red" id="close"><i class="material-icons">close</i></a>
+        <table class="responsive-table highlight" id='results-table'>
+          <thead>
+            <tr>
+              <th>Customized Rank</th>
+              <th>Attraction Name</th>
+              <th>Height Requirement</th>
+              <th>Description</th>
+              <th>Ride Video</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  <div class="parallax-container">
+    <div class="parallax">
+      <img src="https://blog-cdn.touringplans.com/wp-content/uploads/2014/07/USA_MainStreetUsa_Sperduto.jpg">
+    </div>
+  </div>
+  <div id="sunny"></div>
+  <div class="row container">
+    <h1 class="header">Weather</h1>
+    <div class="row">
+      <div class="col s12">
+        <div id="weather">
+          <p class='weather' id='weatherPara'>Florida weather can be sporadic at times. In the summer months, it will likely pour everyday in the afternoon for
+            about 1-2 hours, then stop and be hot and muggy. Check out the weather for today here.</p>
+
+        </div>
+
+      </div>
+    </div>
+    <br>
+
+
+
+    <div id="orlando"></div>
+    <div class="row container map">
+      <h1 class="header">Where Do We Go?</h1>
+      <div class="row">
+        <div class="col s6">
+          <div id="map"></div>
+        </div>
+
+        <div class="col s6">Magic Kingdom Park is inside the Walt Disney World Resort, a massive entertainment complex spanning 47 square miles.
+          Check out how to get where you're going here.
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <h3>The Magic Kingdom Park is split into 6 themed lands. Click below to learn more!</h3>
+  <!-- Cards -->
+  <div id="lands"></div>
+  <div class="row">
+    <div class="col l4 m7">
+      <div class="card">
+        <div class="card-image">
+          <img src="https://images.8tracks.com/cover/i/002/220/226/edi-disney-main-street-usa-6ebde19f32bbc2b2-9722.jpg?rect=323,0,1401,1401&q=98&fm=jpg&fit=max&w=640&h=640">
+          <span class="card-title">Main Street USA</span>
+        </div>
+        <div class="card-content">
+          <p>Here you enter a turn of the century mid-western town inspired by Marceline, Missouri. Shopping and dining locations
+            such as the Main Street Emporium, Uptown Jewelers, and Casey's Corner Hotdog stand are found along Main Street.
+            You can also board a Main Street vehicle and take it up to Cinderella's Castle before entering some of the other
+            lands.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col l4 m7">
+      <div class="card">
+        <div class="card-image">
+          <img src="https://i.pinimg.com/736x/e5/8b/9f/e58b9f9e3ad357db0f169307387e39f3--magic-kingdom-walt-disney.jpg">
+          <span class="card-title">Adventureland</span>
+        </div>
+        <div class="card-content">
+          <p>Attractions such as the Jungle Cruise, Pirates of the Carribean, and the Enchanted Tiki Room make up this amazing
+            land. This mysterious place is also home to the world famous Dole Whip!
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col l4 m7">
+      <div class="card">
+        <div class="card-image">
+          <img src="https://s-media-cache-ak0.pinimg.com/originals/6c/8e/e2/6c8ee21fa8dcde16ee67f54dc71fc0b7.jpg">
+          <span class="card-title">Frontierland</span>
+        </div>
+        <div class="card-content">
+          <p>Travel back in time to this quaint mid-western town where adventures such as Splash Mountain, Big Thunder Mountain
+            Railroad, and Tom Sawyers Island await you. There's also a lot of great grub to be found in places like Pecos
+            Bill's Tall-Tale Inn and Cafe!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- Second row of cards -->
+  <div class="row">
+    <div class="col l4 m7">
+      <div class="card">
+        <div class="card-image">
+          <img src="https://i.pinimg.com/736x/1d/f1/93/1df1938a05783619261950d3ea8fd42b--haunted-mansion-disney-disney-family.jpg">
+          <span class="card-title">Liberty Square</span>
+        </div>
+        <div class="card-content">
+          <p>In this ode to the founding of our country you can visit the Haunted Mansion and The Hall of Presidents. The Columbia
+            Harbour House restaurant is a great place for hearty faire like New England Clam Chowder and chicken pot pie.
+            Also, keep an eye out for the Muppets who are retelling some great stories about the birth of our nation with
+            a Muppet's twist!
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col l4 m7">
+      <div class="card">
+        <div class="card-image">
+          <img src="https://c1.staticflickr.com/9/8407/15783493916_cd2bd9f7ef_z.jpg">
+          <span class="card-title">Fantasyland</span>
+        </div>
+        <div class="card-content">
+          <p>This is where all of your favorite stories come to life. Beauty and the Beast, The Little Mermaid, and Snow White
+            just to name a few. Dining in the Beasts castle is also an amazing experince that can't be missed!</p>
+        </div>
+      </div>
+    </div>
+    <div class="col l4 m7">
+      <div class="card">
+        <div class="card-image">
+          <img src="https://images.8tracks.com/cover/i/010/192/305/mk-tomorrowland-june13-5332.jpg?rect=65,0,901,901&q=98&fm=jpg&fit=max&w=640&h=640">
+          <span class="card-title">Tomorrowland</span>
+        </div>
+        <div class="card-content">
+          <p>Rockets! So many rockets! Blast off on amazing attractions like Space Mountain or the Astro Orbiter. Visit Buzz
+            Lightyear and help him defeat the evil Emperor Zurg. When all of this excitement makes you hungry, stop by Cosmic
+            Ray's Starlight Cafe and catch a performace form Sonny Eclipse!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-copyright">
+      <div class="container">
+        © 2018 UCF Coding Bootcamp | Anibal | Jonathan | Brandon | Tim
+      </div>
+    </div>
+  </footer>
+
+
+
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+  <!-- Linking to jQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <!-- Link to materialize Javascript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <!-- Link to our custom javascript -->
+  <script type="text/javascript" src="assets/javascript/logic.js"></script>
+  <!-- Link to google maps API -->
+  <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdU9iaNwEJ_KNTGgxusg-tGakfASqSm0I&callback=initMap"></script> -->
+  <script>
+    function initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 10,
+        center: { lat: 28.3858620, lng: -81.512901 }
+      });
+
+      var trafficLayer = new google.maps.TrafficLayer();
+      trafficLayer.setMap(map);
+    }
+  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdU9iaNwEJ_KNTGgxusg-tGakfASqSm0I&callback=initMap">
+  </script>
+</body>
+
+</html>

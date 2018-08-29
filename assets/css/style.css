@@ -1,0 +1,182 @@
+/* Style Settings for Google Maps API */
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+       #map {
+        height: 200px;
+        width: 100%;
+      }
+
+/* Style Settings for Weather API */
+       #weather {
+        text-align: center;
+
+      }
+      .weather {
+        color: grey;
+        font-size: 20px;
+        line-height: 40%;
+      }
+      #weatherPara {
+        line-height: 130%;
+      }
+
+      /* -------------------------------------------------------------------- */
+      h1 {
+        color: rgb(36, 159, 235);
+        font-family: 'Times New Roman', Times, serif;
+        font: bolder;
+        font-size: 50px;
+        text-align: center;
+    }
+    .weathertext {
+        margin-right: 60%;
+    }
+
+
+    p {
+      text-align: center;
+      color: firebrick;
+      font-size: 20px;
+    }
+
+    
+nav {
+  z-index: 500;
+  background-color: lightskyblue;
+  color: black;
+  border-radius: 10px;
+  width: 120%;
+  margin-left: -10%;
+}
+
+h3 {
+  color: rgb(36, 159, 235);
+  font-family: 'Times New Roman', Times, serif;
+  font: bolder;
+  font-size: 20px;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 22px;
+}
+
+.card-content {
+  font-size: 22px;
+}
+
+.card:hover {
+  box-shadow: 10px 10px 11px #888787;
+}
+
+
+.btn {
+
+  background: -webkit-linear-gradient(left, rgba(203,96,179,1) 0%,rgba(168,0,119,1) 100%,rgba(219,54,164,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  color: aliceblue;
+  margin-left: 100%;
+  height: 50px;
+  width: 130px;
+  border-radius: 5px;
+  font-size: 25px;
+}
+
+.btn:hover {
+  color: aqua;
+  background-color: -webkit-linear-gradient(left, rgba(203,96,179,1) 0%,rgba(168,0,119,1) 100%,rgba(219,54,164,1) 100%); /* Chrome10-25,Safari5.1-6 */
+
+
+}
+
+::placeholder {
+  color: black;
+  background-color: white;
+  text-align: center;
+  font-size: 20px;
+  width: 50%;
+  overflow: hidden;
+}
+
+/* Footer with copyright, white text, and blueviolet background, and sticking to the bottom with no white space. */
+.footer-copyright {
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  padding-top: .5%;
+  padding-bottom: 5%;
+  margin-bottom: 1;
+  background: -webkit-linear-gradient(left, rgba(203,96,179,1) 0%,rgba(168,0,119,1) 100%,rgba(219,54,164,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  position: sticky;
+  height: 12;
+}
+
+#loadResults {
+  height:20px; 
+  width:100px; 
+  margin: -20px -50px; 
+  position:relative;
+  top:50%; 
+  left:50%;
+}
+
+#adultsInput {
+  margin-top: 5px;
+  width: 200px;
+  margin-left: 10%;
+}
+
+#infantsInput {
+  margin-top: 5px;
+  width: 180px;
+  margin-left: 75%;
+}
+
+#childrenInput {
+  margin-top: 5px;
+  width: 180px;
+  margin-left: 50%;
+}
+
+#nameInput {
+  width: 150px;
+}
+
+.topofpage {
+  background: -webkit-linear-gradient(left, rgba(203,96,179,1) 0%,rgba(168,0,119,1) 100%,rgba(219,54,164,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  color: black;
+  border: solid rgb(21, 2, 189);
+}
+
+h4 {
+  font-family: 'Anton', sans-serif; 
+  font-size: 40px;
+  padding-top: 30px;
+  padding-left: 40px;
+  color: black;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: aqua;
+}
+#tableDiv {
+  width: 100vw;
+}
+
+h6 {
+  font-size:60px;
+  margin-top: 30px;
+  padding-top: 10px;
+  padding-left: 20%;
+  margin-bottom: -30px;
+  color: black;
+  background-color: rgb(130, 177, 247);
+  border-radius: 10px;
+  border: blue solid;
+  font-family: 'Orbitron', sans-serif;
+
+
+}
